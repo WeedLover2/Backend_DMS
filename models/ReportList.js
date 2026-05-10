@@ -11,9 +11,9 @@ const reportListSchema = new mongoose.Schema({
         default: false
     },
     IsChildFrom: {
-        type: string,
+        type: String,
         ref: 'Report'
     }
 });
 
-module.exports = mongoose.model('reportList', reportListSchema);
+module.exports = mongoose.model('ReportList', reportListSchema);
