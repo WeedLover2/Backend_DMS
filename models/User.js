@@ -6,24 +6,20 @@ const userSchema = new mongoose.Schema({
         required: [true, 'Email is required'],
         sparse: true,
     },
-
-    Role: {
+    role: {
         type: String,
         enum: ["admin", "user"],
         default: "user",
         required: [true, 'Role is Required'],
-    }
+    },
     password: {
         type: String,
-        required: [true, 'Password is required']
-        validate
+        required: [true, 'Password is required'],
+        validate: {
             validator: function(value) {
-
-            return value.length >= 8 && /\d/.test(value); 
-
+                return value.length >= 8 && /\d/.test(value);
             },
-
-        message: 'Password must be at least 8 characters and contain a number'  // Static message
+            message: 'Password must be at least 8 characters and contain a number'
         }
     },
 });

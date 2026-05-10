@@ -2,7 +2,8 @@ const mongoose = require ('mongoose');
 
 const Report = new mongoose.Schema({
     title: {
-        type: String [maxLength: 30],
+        type: String,
+        maxLength: 30,
         required: [true, 'title is required'],
         sparse: true
     },
