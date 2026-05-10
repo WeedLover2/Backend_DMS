@@ -1,6 +1,6 @@
 const mongoose = require ('mongoose');
 
-const Report = new mongoose.Schema({
+const ReportSchema = new mongoose.Schema({
     title: {
         type: String,
         maxLength: 30,
