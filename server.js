@@ -14,7 +14,11 @@ app.use(express.json());
 
 // Routes
 const ReportRoutes = require('./routes/ReportRoutes');
+const UserRoutes = require('./routes/UserRoutes');
+const AuthRoutes = require('./routes/AuthRoutes');
 const ReportListRoutes = require('./routes/ReportListRoutes');
+app.use('/api', UserRoutes);
+app.use('/api', AuthRoutes);
 app.use('/api', ReportRoutes);
 app.use('/api', ReportListRoutes);
 
